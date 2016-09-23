@@ -1,0 +1,80 @@
+body {
+    background: url(/RCSMS_Web/images/bg-pattern.jpg);
+}
+
+#logo{
+    width: 200px;
+    height: 200px;
+}
+
+#button {
+  display: inline-block;
+  background: #d4eeff;
+  background-image: -webkit-linear-gradient(top, #d4eeff, #0063a1);
+  background-image: -moz-linear-gradient(top, #d4eeff, #0063a1);
+  background-image: -ms-linear-gradient(top, #d4eeff, #0063a1);
+  background-image: -o-linear-gradient(top, #d4eeff, #0063a1);
+  background-image: linear-gradient(to bottom, #d4eeff, #0063a1);
+  -webkit-border-radius: 27px;
+  -moz-border-radius: 27px;
+  border-radius: 27px;
+  text-shadow: 3px 1px 6px #666666;
+  -webkit-box-shadow: 2px 2px 3px #c2c2c2;
+  -moz-box-shadow: 2px 2px 3px #c2c2c2;
+  box-shadow: 2px 2px 3px #c2c2c2;
+  color: #ffffff;
+  font-size: 32px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  width: 100px;
+}
+
+#button:hover {
+  display: inline-block;
+  background: #99daff;
+  background-image: -webkit-linear-gradient(top, #99daff, #004570);
+  background-image: -moz-linear-gradient(top, #99daff, #004570);
+  background-image: -ms-linear-gradient(top, #99daff, #004570);
+  background-image: -o-linear-gradient(top, #99daff, #004570);
+  background-image: linear-gradient(to bottom, #99daff, #004570);
+  text-decoration: none;
+}
+
+#smallbutton {
+  display: inline-block;
+  background: #d4eeff;
+  background-image: -webkit-linear-gradient(top, #d4eeff, #0063a1);
+  background-image: -moz-linear-gradient(top, #d4eeff, #0063a1);
+  background-image: -ms-linear-gradient(top, #d4eeff, #0063a1);
+  background-image: -o-linear-gradient(top, #d4eeff, #0063a1);
+  background-image: linear-gradient(to bottom, #d4eeff, #0063a1);
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  border-radius: 18px;
+  text-shadow: 1px 1px 6px #666666;
+  -webkit-box-shadow: 1px 1px 3px #c2c2c2;
+  -moz-box-shadow: 1px 1px 3px #c2c2c2;
+  box-shadow: 1px 1px 3px #c2c2c2;
+  color: #ffffff;
+  font-size: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  width: auto;
+}
+
+#smallbutton:hover {
+  display: inline-block;
+  background: #99daff;
+  background-image: -webkit-linear-gradient(top, #99daff, #004570);
+  background-image: -moz-linear-gradient(top, #99daff, #004570);
+  background-image: -ms-linear-gradient(top, #99daff, #004570);
+  background-image: -o-linear-gradient(top, #99daff, #004570);
+  background-image: linear-gradient(to bottom, #99daff, #004570);
+  text-decoration: none;
+}
