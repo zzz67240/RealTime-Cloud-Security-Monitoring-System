@@ -62,4 +62,20 @@ public class LinkJdbcDao implements LinkDao, Serializable {
         }
         return deviceSerialNumberList;
     }
+    
+    @Override
+    public List<String> deviceSerialNumberQuery(int serialnumber) throws SQLException {
+        List<String> result = new ArrayList<>();
+        String SNQ = "SELECT * FROM link WHERE CustomerSerialNumber = ?";
+        PreparedStatement ps = con.prepareStatement(SNQ);
+        ps.setInt(1, serialnumber);
+        ResultSet rs = ps.executeQuery();
+        
+        while(rs.next()){
+            String dsn = rs.getString("DeviceSerialNumber");
+            result.add(dsn);
+        }
+        return result;
+    }
+    
 }

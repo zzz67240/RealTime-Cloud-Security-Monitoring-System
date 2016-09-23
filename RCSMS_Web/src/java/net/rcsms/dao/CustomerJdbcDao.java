@@ -124,7 +124,7 @@ public class CustomerJdbcDao implements CustomerDao, Serializable {
         }
         return result;
     }
-
+    
     @Override
     public List<Customer> query(int serialnumber, String firstname, String lastname,
             int gender, String sbirthday, String phonenumber, String address) throws SQLException {

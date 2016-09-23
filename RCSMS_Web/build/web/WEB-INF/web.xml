@@ -64,6 +64,10 @@
         <servlet-name>UpdateCustomerConfirmServlet</servlet-name>
         <servlet-class>net.rcsms.servlet.customer.UpdateCustomerConfirmServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetDeviceServlet</servlet-name>
+        <servlet-class>net.rcsms.servlet.getdevice.GetDeviceServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCustomerServlet</servlet-name>
         <url-pattern>/customer/add.do</url-pattern>
@@ -127,6 +131,10 @@
     <servlet-mapping>
         <servlet-name>QueryRecordByDateServlet</servlet-name>
         <url-pattern>/record/querybydate.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetDeviceServlet</servlet-name>
+        <url-pattern>/mobile/device.get</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
