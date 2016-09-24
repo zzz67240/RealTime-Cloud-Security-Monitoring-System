@@ -24,7 +24,7 @@
         <url-pattern>/*</url-pattern>
         <!--filter all pages-->
     </filter-mapping>
-    <!--    <error-page>
+    <error-page>
         <error-code>404</error-code>
         <location>/error/error.jsp</location>
     </error-page>
@@ -39,7 +39,7 @@
     <error-page>
         <exception-type>java.lang.Exception</exception-type>
         <location>/error/error.jsp</location>
-    </error-page>-->
+    </error-page>
     <servlet>
         <servlet-name>AddCustomerServlet</servlet-name>
         <servlet-class>net.rcsms.servlet.customer.AddCustomerServlet</servlet-class>
