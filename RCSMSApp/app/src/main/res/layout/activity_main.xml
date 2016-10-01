@@ -1,0 +1,187 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <!-- 登入中 -->
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <!-- 捲動元件 -->
+    <ScrollView
+        android:id="@+id/login_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:id="@+id/login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/customerid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Customer Serial Number"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:text="10"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pasword"
+                    android:imeActionId="@+id/login"
+                    android:imeActionLabel="Sign in"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:text="12345678"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/sign_in"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="LOGIN"
+                android:textStyle="bold"
+                android:onClick="clickConnect"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
+    <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+    <!--android:paddingRight="@dimen/activity_horizontal_margin"-->
+    <!--android:paddingTop="@dimen/activity_vertical_margin"-->
+    <!--tools:context="net.rcsms.rcsmsapp.MainActivity">-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/info"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Hello World!" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/csn"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_above="@+id/button"-->
+        <!--android:layout_alignParentStart="true" />-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="New Button"-->
+        <!--android:id="@+id/button"-->
+        <!--android:onClick="getDevices"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    <!--<Button-->
+        <!--android:text="Start"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/button"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_marginTop="58dp"-->
+        <!--android:id="@+id/btn_start"-->
+        <!--android:onClick="control"/>-->
+
+    <!--<Button-->
+        <!--android:text="End"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignTop="@+id/btn_start"-->
+        <!--android:layout_toEndOf="@+id/btn_start"-->
+        <!--android:id="@+id/btn_end"-->
+        <!--android:onClick="control"/>-->
+
+    <!--<Button-->
+        <!--android:text="FORWARD"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/btn_start"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:id="@+id/btn_forward"-->
+        <!--android:onClick="control"/>-->
+
+    <!--<Button-->
+        <!--android:text="BACK"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/btn_end"-->
+        <!--android:layout_toEndOf="@+id/btn_forward"-->
+        <!--android:id="@+id/btn_back"-->
+        <!--android:onClick="control"/>-->
+
+    <!--<Button-->
+        <!--android:text="LEFT"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/btn_end"-->
+        <!--android:layout_toEndOf="@+id/btn_end"-->
+        <!--android:id="@+id/btn_left"-->
+        <!--android:onClick="control"/>-->
+
+    <!--<Button-->
+        <!--android:text="RIGHT"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBottom="@+id/btn_left"-->
+        <!--android:layout_toEndOf="@+id/btn_left"-->
+        <!--android:id="@+id/btn_right"-->
+        <!--android:onClick="control"/>-->
+
+    <!--<Button-->
+        <!--android:text="STOP"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/btn_forward"-->
+        <!--android:layout_toStartOf="@+id/btn_end"-->
+        <!--android:id="@+id/btn_stop"-->
+        <!--android:onClick="control"/>-->
+
+    <!--<SeekBar-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_above="@+id/btn_end"-->
+        <!--android:layout_marginBottom="13dp"-->
+        <!--android:id="@+id/webcam"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:max="100"-->
+        <!--android:progress="50" />-->
+
+<!--</RelativeLayout>-->
