@@ -1,6 +1,5 @@
 package net.rcsms.dao;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.Date;
@@ -52,7 +51,7 @@ public class RecordJdbcDao implements RecordDao, Serializable {
 
         if (rs.next()) {
             int rsn = rs.getInt("SerialNumber");
-            Date datetime = rs.getDate("DateTime");
+            String datetime = rs.getString("DateTime");
             String deviceserialnumber = rs.getString("DeviceSerialNumber");
             int temperature = rs.getInt("Temperature");
             int humidity = rs.getInt("Humidity");
@@ -74,7 +73,7 @@ public class RecordJdbcDao implements RecordDao, Serializable {
 
         while (rs.next()) {
             int rsn = rs.getInt("SerialNumber");
-            Date datetime = rs.getDate("DateTime");
+            String datetime = rs.getString("DateTime");
             String deviceserialnumber = rs.getString("DeviceSerialNumber");
             int temperature = rs.getInt("Temperature");
             int humidity = rs.getInt("Humidity");
@@ -97,7 +96,7 @@ public class RecordJdbcDao implements RecordDao, Serializable {
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             int rsn = rs.getInt("SerialNumber");
-            Date datetime = rs.getDate("DateTime");
+            String datetime = rs.getString("DateTime");
             String sdeviceserialnumber = rs.getString("DeviceSerialNumber");
             int temperature = rs.getInt("Temperature");
             int humidity = rs.getInt("Humidity");
@@ -109,18 +108,20 @@ public class RecordJdbcDao implements RecordDao, Serializable {
     }
 
     @Override
-    public List<Record> QueryByDate(java.util.Date date1, java.util.Date date2) throws SQLException {
+    public List<Record> QueryByDate(String date1, String date2) throws SQLException {
         List<Record> result = new ArrayList<>();
 
-        String QUERYBYDATE_SQL = "SELECT * FROM record WHERE DateTime BETWEEN ? AND ?";
+        String QUERYBYDATE_SQL = "SELECT * FROM record WHERE left(DateTime, 10) BETWEEN ? AND ?";
         PreparedStatement ps = con.prepareStatement(QUERYBYDATE_SQL);
-        ps.setDate(1, new java.sql.Date(date1.getTime()));
-        ps.setDate(2, new java.sql.Date(date2.getTime()));
+        ps.setString(1, date1);
+        ps.setString(2, date2);
+        
+        System.out.println(date1 + date2);
         
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             int rsn = rs.getInt("SerialNumber");
-            Date datetime = rs.getDate("DateTime");
+            String datetime = rs.getString("DateTime");
             String deviceserialnumber = rs.getString("DeviceSerialNumber");
             int temperature = rs.getInt("Temperature");
             int humidity = rs.getInt("Humidity");
@@ -134,7 +135,7 @@ public class RecordJdbcDao implements RecordDao, Serializable {
     public List<Record> getUsq(){
         List<Record> result = null; 
         try {
-            result = UnusualStateQuery(75, 0, 80, 30, 1, 1);
+            result = UnusualStateQuery(50, 0, 100, 20, 15, 15);
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -160,7 +161,7 @@ public class RecordJdbcDao implements RecordDao, Serializable {
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             int rsn = rs.getInt("SerialNumber");
-            Date datetime = rs.getDate("DateTime");
+            String datetime = rs.getString("DateTime");
             String deviceserialnumber = rs.getString("DeviceSerialNumber");
             int temperature = rs.getInt("Temperature");
             int humidity = rs.getInt("Humidity");

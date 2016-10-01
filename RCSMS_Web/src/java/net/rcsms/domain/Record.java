@@ -6,7 +6,7 @@ import java.util.Date;
 public class Record implements Serializable {
     
     private int serialnumber;
-    private Date datetime;
+    private String datetime;
     private String deviceserialnumber;
     private int temperature;
     private int humidity;
@@ -17,7 +17,7 @@ public class Record implements Serializable {
         
     }
 
-    public Record(int serialnumber, Date datetime, String deviceserialnumber, int temperature, int humidity, int gas, int smoke) {
+    public Record(int serialnumber, String datetime, String deviceserialnumber, int temperature, int humidity, int gas, int smoke) {
         this.serialnumber = serialnumber;
         this.datetime = datetime;
         this.deviceserialnumber = deviceserialnumber;
@@ -35,7 +35,7 @@ public class Record implements Serializable {
         this.serialnumber = serialnumber;
     }
 
-    public Date getDatetime() {
+    public String getDatetime() {
         return datetime;
     }
 
