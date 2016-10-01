@@ -1,1 +1,6 @@
 # RealTime-Cloud-Security-Monitoring-System
+
+即時雲端安全監控系統
+Real-Time Cloud Security Monitoring System
+
+以物聯網概念為主軸，使用環境感測機器人阿波一號將數據上傳雲端並搭配手機應用程式進行遠端操控或者進入守衛模式，配上企業用後端管理網頁應用程式進行顧客及裝置管理和感測紀錄追蹤，來完成對家庭或者工廠等特定地點的即時雲端安全監控。
