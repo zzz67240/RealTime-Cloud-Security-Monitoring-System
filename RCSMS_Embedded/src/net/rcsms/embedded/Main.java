@@ -143,12 +143,12 @@ public class Main {
     private static final Set<String> record = new HashSet<>();
 
     // 開啟儲存NFC UID的檔案
-    private static BufferedWriter initFile() {
+    private static BufferedReader initFile() {
         File file = new File(FILE_NAME);
-        BufferedWriter result = null;
+        BufferedReader result = null;
 
         try {
-            result = new BufferedWriter(new FileWriter(file));
+            result = new BufferedReader(new FileReader(file));
         } catch (IOException e) {
             System.out.println("============ " + e.toString());
         }
@@ -254,7 +254,7 @@ public class Main {
         }
 
         // 開啟儲存NFC UID的檔案 
-        final BufferedWriter writer = initFile();
+        final BufferedReader reader = initFile();
 
         // 讀取所有NFC Tag UID資料
         initRecord();
@@ -265,7 +265,7 @@ public class Main {
             @Override
             public void run() {
                 try {
-                    writer.close();
+                    reader.close();
                 } catch (IOException e) {
                     System.out.println("============ " + e.toString());
                 }
@@ -517,7 +517,7 @@ public class Main {
                     l293d.stop();
                     System.out.println("Too close!");
                 }
-                delay(1000);
+                delay(200);
             }
 
             System.out.println("Stop Webcam Stream...");
@@ -578,7 +578,7 @@ public class Main {
                             System.out.println(e);
                         }
 
-                        delay(1 * 1000);
+                        delay(500);
 
                         //***********播放identify.wav，進入身分辨識迴圈
                         beep(300);
@@ -609,11 +609,11 @@ public class Main {
                         //若鳴30秒後，未辨識，回到守衛模式主迴圈
                         //***********播放warn.wav
                         if (secondcount == 60) {
-                            for (int i = 0; i < 60; i++) {
+                            for (int i = 0; i < 120; i++) {
                                 //蜂鳴器作響
                                 beep(250);
                                 boolean warn3 = uss.found(guardmodedetectlimit);
-                                if (warn3 == false && i >= 30) {
+                                if (warn3 == false && i >= 80) {
                                     childWarnning.setValue(warn3);
                                     oldWarn = warn3;
                                     break;
