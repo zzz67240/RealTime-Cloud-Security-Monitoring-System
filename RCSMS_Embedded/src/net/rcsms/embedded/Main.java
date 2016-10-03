@@ -16,12 +16,10 @@ import com.pi4j.io.gpio.RaspiPin;
 import com.pi4j.wiringpi.Gpio;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -578,7 +576,7 @@ public class Main {
                             System.out.println(e);
                         }
 
-                        delay(500);
+                        delay(300);
 
                         //***********播放identify.wav，進入身分辨識迴圈
                         beep(300);
@@ -627,7 +625,7 @@ public class Main {
                         }
                     }
                 }
-                delay(1000);
+                delay(500);
             }
         }
     }
