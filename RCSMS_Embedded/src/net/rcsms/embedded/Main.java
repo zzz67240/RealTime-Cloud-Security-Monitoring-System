@@ -50,9 +50,9 @@ public class Main {
     private static final GpioController gpio = GpioFactory.getInstance();
 
     //超音波偵測腳位
-    private static final GpioPinDigitalInput usspin1 = gpio.provisionDigitalInputPin(RaspiPin.GPIO_08);
-    private static final GpioPinDigitalOutput usspin2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_09);
-    private static final UltraSoundSensor uss = new UltraSoundSensor(usspin1, usspin2);
+    private static final GpioPinDigitalInput echopin1 = gpio.provisionDigitalInputPin(RaspiPin.GPIO_08);
+    private static final GpioPinDigitalOutput trigpin2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_09);
+    private static final UltraSoundSensor uss = new UltraSoundSensor(echopin1, trigpin2);
 
     //傾倒偵測腳位
     private static final GpioPinDigitalInput bspin = gpio.provisionDigitalInputPin(RaspiPin.GPIO_21, PinPullResistance.PULL_DOWN);
@@ -68,7 +68,7 @@ public class Main {
     //DHT11溫溼度偵測腳位
     private static final DHT11Sensor ds = new DHT11Sensor(7);
 
-    //瓦斯偵測腳位
+    //瓦斯及煙霧偵測腳位
     private static final GasSensor gas = new GasSensor(mcp3008, MCP3008Channels.CH_00);
     private static final GasSensor smoke = new GasSensor(mcp3008, MCP3008Channels.CH_01);
 
